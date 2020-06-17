@@ -1,7 +1,7 @@
 FROM ubuntu:focal
 LABEL maintainer="Dovry"
 ENV container=docker
-ENV script_url "https://raw.githubusercontent.com/dovry/ansible-install-script/master/ansible_convenience_script.sh"
+ENV script_url "https://raw.githubusercontent.com/dovry/ansible-install-script/ubuntu20/ansible_convenience_script.sh"
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends wget \
