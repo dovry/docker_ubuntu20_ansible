@@ -5,12 +5,12 @@ ENV script_url "https://raw.githubusercontent.com/dovry/ansible-install-script/m
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends wget \
-  && rm -rf /var/lib/apt/lists* \
-  && apt-get clean \
   # Install ansible
   && wget --no-check-certificate $script_url \
   && chmod +x ansible_convenience_script.sh \
-  && sh ./ansible_convenience_script.sh -p
+  && sh ./ansible_convenience_script.sh -p \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists* \
 
 COPY initctl_faker .
 RUN chmod +x initctl_faker \
