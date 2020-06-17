@@ -10,7 +10,7 @@ RUN apt-get update \
   && chmod +x ansible_convenience_script.sh \
   && sh ./ansible_convenience_script.sh -p \
   && apt-get clean \
-  && rm -rf /var/lib/apt/lists* \
+  && rm -rf /var/lib/apt/lists*
 
 COPY initctl_faker .
 RUN chmod +x initctl_faker \
